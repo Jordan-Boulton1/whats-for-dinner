@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@500;600&family=Mukta+Vaani:wght@300;400&family=Overpass:wght@200;300&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Generic project styles */
+  color: #3a3a3a;
+  font-family: 'Mada', sans-serif;
+}
+
+header {
+  background-color: aquamarine;
+  color: white;
+}
+
+main {
+  background-color: blueviolet;
+  flex-grow: 1;
+}
+
+footer {
+  background-color: orange;
+  margin-top: auto;
+}
+
+h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 25px 2px 10px;
+}
+
+h2,
+h3 {
+  font-family: 'Mukta Vaani', sans-serif;
+}
+
+p {
+  font-family: 'Overpass', sans-serif;
+  text-align: center;
+  line-height: 25px;
+}
+
+#hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/katie-smith-uQs1802D0CQ-unsplash.webp);
+}
+
+.heading {
+  height: 60vh;
+  background: center 60% / cover no-repeat;
+}
