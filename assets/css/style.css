@@ -15,16 +15,16 @@ body {
   /* Generic project styles */
   color: #3a3a3a;
   font-family: 'Mada', sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/katie-smith-uQs1802D0CQ-unsplash.webp) no-repeat fixed center;
 }
 
 header {
-  background-color: aquamarine;
   color: white;
 }
 
 main {
-  background-color: blueviolet;
   flex-grow: 1;
+  color: #fff;
 }
 
 footer {
@@ -50,11 +50,56 @@ p {
   line-height: 25px;
 }
 
-#hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/katie-smith-uQs1802D0CQ-unsplash.webp);
+
+/* Main content */
+.recipe-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
 }
 
-.heading {
-  height: 60vh;
-  background: center 60% / cover no-repeat;
+.search {
+  background: #444;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  border: 1px solid #fff;
 }
+
+.search-term {
+  padding: 10px 5px;
+  float: left;
+  color: #ccc;
+  border: 0;
+  background: transparent;
+  border-radius: 3px 0 0 3px;
+}
+
+.search-term:focus {
+  outline: 0;
+  background: transparent;
+}
+
+.search-btn {
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+  background: transparent;
+  border-left: 1px solid #fff;
+  border-radius: 0 3px 3px 0;
+}
+
+.search-btn:hover {
+  background: #fff;
+  color: #444;
+}
+
+.search-btn:focus {
+  outline: 0;
+}
+
+/* Footer content */

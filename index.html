@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>What's for Dinner?</title>
 </head>
 
@@ -24,14 +23,14 @@
 
   <!-- Main -->
   <main>
-    <div class="recipe-area">
-      <div class="search-container">
-        <input class="search-bar" type="text" placeholder="Search ingredients.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </div>
-    </div>
+    <section class="recipe-area">
+      <form class="search">
+        <input class="search-term" type="search" placeholder="Search ingredients.." name="search">
+        <button class="search-btn" type="submit">Search</button>
+      </form>
+    </section>
 
-    <div class="featured-recipes-container">
+    <section class="featured-recipes-container">
       <h2>Chef's featured recipes</h2>
 
       <div class="featured-recipes">
@@ -39,13 +38,16 @@
         <div class="feature-box"></div>
         <div class="feature-box"></div>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
     <h3>this is the footer</h3>
   </footer>
+
+  <!-- Font awesome kit -->
+  <script src="https://kit.fontawesome.com/c649b17804.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
