@@ -65,7 +65,7 @@ p {
   border: 1px solid #fff;
 }
 
-.search-term {
+#search-term {
   padding: 10px 5px;
   float: left;
   color: #ccc;
@@ -74,12 +74,12 @@ p {
   border-radius: 3px 0 0 3px;
 }
 
-.search-term:focus {
+#search-term:focus {
   outline: 0;
   background: transparent;
 }
 
-.search-btn {
+#search-btn {
   position: relative;
   float: right;
   border: 0;
@@ -93,12 +93,12 @@ p {
   border-radius: 0 3px 3px 0;
 }
 
-.search-btn:hover {
+#search-btn:hover {
   background: #fff;
   color: #444;
 }
 
-.search-btn:focus {
+#search-btn:focus {
   outline: 0;
 }
 
