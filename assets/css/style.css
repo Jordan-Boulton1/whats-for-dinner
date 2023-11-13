@@ -111,7 +111,7 @@ p {
 }
 
 .recipe-card {
-  color: #fff;
+  background-color: #fff;
   margin: 4em auto;
   width: 90%;
   max-width: 496px;
@@ -144,6 +144,7 @@ p {
 
 .recipe-card ul li .icon {
   vertical-align: bottom;
+  color: blue;
 }
 
 .recipe-card ul li span:nth-of-type(2) {
@@ -151,13 +152,14 @@ p {
   font-size: 0.8em;
   font-weight: 300;
   vertical-align: middle;
-  color: red;
+  color: #000;
 }
 
 .recipe-card h2,
 .recipe-card h3 {
   margin: 0;
   font-weight: 300;
+  color: #000;
 }
 
 .recipe-card h2 {
