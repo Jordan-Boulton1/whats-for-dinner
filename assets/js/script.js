@@ -33,9 +33,9 @@ function searchRecipeApi(ingredientValue) {
   // and that the status is "Ok" (200)
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      console.log(xhttp.response);
       var returnedRecipes = filterReturnedRecipes(xhttp.response.hits);
       let recipeContainer = document.getElementById('returned-recipe-container');
+      console.log(returnedRecipes)
       recipeContainer.innerHTML = "";
       // loops through the 4 random recipes returned
       for (let i = 0; i < returnedRecipes.length; i++) {
@@ -80,18 +80,19 @@ function selectRandomItem(recipeArray) {
  * @param recipeContainer - the parent element which the recipe item is injected into. 
  */
 function renderRecipes(recipe, recipeContainer) {
+  let recipeTime = recipe.totalTime == 0 ? 30 : recipe.totalTime;
   var recipeCard = `
   <div class="recipe-card">
     <aside>
       <img src=${recipe.images.REGULAR.url} alt="">
     </aside>
     <article>
-      <h2>Title</h2>
-      <h3>cuisine type</h3>
+      <h2>${recipe.label}</h2>
+      <h3>${recipe.cuisineType.toString()}</h3>
       <ul>
-        <li><span class="icon fa-solid fa-users"></span><span>1</span></li>
-        <li><span class="icon fa-solid fa-clock"></span><span>15</span></li>
-        <li><span class="icon fa-solid fa-fire"></span><span>100kcal</span></li>
+        <li><span class="icon fa-solid fa-users"></span><span>${recipe.yield}</span></li>
+        <li><span class="icon fa-solid fa-clock"></span><span>${recipeTime}</span></li>
+        <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <p class="recipe-ingredients"><span>Ingredients:&nbsp;</span></p>
     </article>
@@ -100,7 +101,7 @@ function renderRecipes(recipe, recipeContainer) {
   // takes the text above and transforms into html
   var recipeCardDocument = htmlParser.parseFromString(recipeCard, 'text/html');
   // takes recipe card div from the created document
-  var recipeCardHtml = recipeCardDocument.body.firstElementChild;
+  var recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
   // takes returned recipe container and appends the recipe card to html
   recipeContainer.appendChild(recipeCardHtml);
 }
