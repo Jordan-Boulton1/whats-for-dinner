@@ -34,6 +34,11 @@ function searchRecipeApi(ingredientValue) {
   }
 }
 
+/**
+ * function that selects 4 random recipes from the array of the api call.
+ * @param recipeArray - recipes from the api call.
+ * @returns a 4 length version of the recipe api call.
+ */
 function filterReturnedRecipes(recipeArray) {
   var maxRecipes = 4;
   var randomRecipes = [];
