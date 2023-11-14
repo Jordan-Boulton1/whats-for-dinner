@@ -24,6 +24,12 @@ function searchRecipeApi(event) {
   // and that the status is "Ok" (200)
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
+      var errorHandler = document.getElementById('error-handler');
+      errorHandler.innerHTML = "";
+      if (xhttp.response.hits.length == 0) {
+        errorHandler.innerHTML = "Sorry we couldn't find what you were looking for.";
+        return;
+      }
       var returnedRecipes = filterReturnedRecipes(xhttp.response.hits);
       let recipeContainer = document.getElementById('returned-recipe-container');
       console.log(returnedRecipes)
@@ -43,7 +49,7 @@ function searchRecipeApi(event) {
  * @returns a 4 length version of the recipe api call.
  */
 function filterReturnedRecipes(recipeArray) {
-  var maxRecipes = 4;
+  var maxRecipes = 10;
   var randomRecipes = [];
   for (let i = 0; i < maxRecipes; i++) {
     var randomItem = selectRandomItem(recipeArray);
