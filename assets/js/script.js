@@ -2,23 +2,14 @@
 
 const htmlParser = new DOMParser();
 
-// Wait for DOM to load and add event listener to search button
-// Call search recipe api
-document.addEventListener("DOMContentLoaded", function () {
-
-  const searchBtn = document.getElementById('search-btn');
-  searchBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    const searchInput = document.getElementById('search-term').value;
-    searchRecipeApi(searchInput);
-  });
-});
-
 /**
  * function that calls the recipe api
  * @param ingredientValue - ingredient provided by the user in order to get recipes from the api. 
  */
-function searchRecipeApi(ingredientValue) {
+function searchRecipeApi(event) {
+  event.preventDefault();
+  var form = new FormData(event.target);
+  var ingredientValue = form.get("search");
   console.log(ingredientValue)
   const apiKey = exportApiKey();
   const appId = exportApiId();
@@ -89,13 +80,13 @@ function renderRecipes(recipe, recipeContainer) {
     </aside>
     <article>
       <h2>${recipe.label}</h2>
-      <ul class="recipe-list">
+      <ul class="recipe-info">
         <li><span class="icon fa-solid fa-users"></span><span>${recipe.yield}</span></li>
         <li><span class="icon fa-solid fa-clock"></span><span>${recipeTime}</span></li>
         <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <h3 class="cuisine-type">${recipe.cuisineType.toString()}</h3>
-      <p class="recipe-ingredients"><span>Ingredients:&nbsp;</span><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
+      <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
     </article>
     </a>
   </div>
@@ -109,6 +100,11 @@ function renderRecipes(recipe, recipeContainer) {
   recipeContainer.appendChild(recipeCardHtml);
 }
 
+/**
+ * Loops through the recipe ingredients array and renders them in the form of a list item
+ * @param ingredientLines is the collection of ingredient from the recipe
+ * @returns the ingredient text as a rendered "li"
+ */
 function renderIngredients(ingredientLines) {
   var renderedIngredients = [];
   for (let i = 0; i < ingredientLines.length; i++) {
