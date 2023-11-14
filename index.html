@@ -26,8 +26,8 @@
   <!-- Main -->
   <main>
     <section class="recipe-area">
-      <form class="search">
-        <input id="search-term" type="search" placeholder="Search ingredients.." name="search">
+      <form class="search" onsubmit="searchRecipeApi(event)">
+        <input id="search-term" type="text" placeholder="Search ingredients.." name="search" required/>
         <button id="search-btn" type="submit">Search</button>
       </form>
     </section>
