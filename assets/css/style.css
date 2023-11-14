@@ -153,11 +153,7 @@ p {
   text-align: center;
 }
 
-.ingredient-list {
-  list-style-type: none;
-}
-
-.recipe-card ul li {
+.recipe-card .recipe-info li {
   display: inline-block;
   margin-left: 1em;
   line-height: 1em;
@@ -176,6 +172,12 @@ p {
   margin-left: 0.5em;
   font-weight: 300;
   vertical-align: middle;
+}
+
+article .ingredient-list {
+  list-style-type: disc;
+  margin-left: 1em;
+  line-height: 1.5em;
 }
 
 .recipe-card h2,
@@ -197,6 +199,7 @@ p {
 }
 
 .recipe-card p {
+  border-top: 2px solid #000;
   margin: 1.25em 0;
   font-weight: 400;
   font-size: 16px;
