@@ -23,8 +23,11 @@
       recipes.
     </p>
   </header>
+
   <!-- Main -->
+  
   <main>
+    <p id="instructions">Enter ingredients separated by a ","</p>
     <section class="recipe-area">
       <form class="search" onsubmit="searchRecipeApi(event)">
         <input id="search-term" type="text" placeholder="Search ingredients.." name="search" required/>
@@ -36,14 +39,6 @@
 
     <section id="returned-recipe-container"></section>
 
-    <section class="featured-recipes-container">
-      <h2>Chef's featured recipes</h2>
-      <div class="featured-recipes">
-        <div class="feature-box"></div>
-        <div class="feature-box"></div>
-        <div class="feature-box"></div>
-      </div>
-    </section>
   </main>
   <!-- Footer -->
   <footer>
