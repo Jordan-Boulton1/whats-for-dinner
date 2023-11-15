@@ -27,6 +27,8 @@ body {
 
 header {
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -57,6 +59,16 @@ p {
   line-height: 25px;
 }
 
+/* header */
+#title {
+  margin-top: 10%;
+}
+
+#landing-text {
+  font-size: 14px;
+  padding: 10px;
+  align-self: center;
+}
 
 /* Main content */
 .recipe-area {
@@ -223,7 +235,22 @@ article .ingredient-list {
   justify-content: center;
 }
 
+@media screen and (min-width: 425px) {
+  #landing-text {
+    width: 400px;
+    font-size: 16px;
+  }
+}
+
+/* media query for screens larger than 1024px*/
 @media screen and (min-width: 1024px) {
+  #title {
+    font-size: 72px;
+  }
+
+  #landing-text {
+    font-size: 18px;
+  }
 
   .recipe-card {
     margin: 4em 2em;
