@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+/* fix for chrome web browser when selecting a cached 
+ingredient to not render the search box white */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
+}
+
 /* General styles */
 body {
   min-height: 100vh;
@@ -55,7 +62,6 @@ p {
 .recipe-area {
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
 }
 
 /* Search bar */
@@ -103,6 +109,10 @@ p {
   outline: 0;
 }
 
+#instructions {
+  margin-top: 10vh;
+}
+
 /* Dynamic recipe cards */
 #returned-recipe-container img {
   max-width: 100%;
@@ -114,10 +124,10 @@ p {
 }
 
 .recipe-card {
-  background-color: #fff;
+  background-color: #F8F9F7;
   margin: 4em auto;
   width: 90%;
-  max-width: 496px;
+  max-width: 382px;
   color: black;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -206,3 +216,21 @@ article .ingredient-list {
 }
 
 /* Footer content */
+
+#returned-recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .recipe-card {
+    margin: 4em 2em;
+  }
+
+  .recipe-card article {
+    overflow: scroll;
+    height: 416px;
+  }
+}
