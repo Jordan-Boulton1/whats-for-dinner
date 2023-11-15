@@ -43,13 +43,13 @@ function searchRecipeApi(event) {
 }
 
 /**
- * function that selects 4 random recipes from the array of the api call and 
+ * function that selects 8 random recipes from the array of the api call and 
  * ensures there are no duplicates.
  * @param recipeArray - recipes from the api call.
- * @returns a 4 length version of the recipe api call.
+ * @returns a 8 length version of the recipe api call.
  */
 function filterReturnedRecipes(recipeArray) {
-  var maxRecipes = 10;
+  var maxRecipes = 8;
   var randomRecipes = [];
   for (let i = 0; i < maxRecipes; i++) {
     var randomItem = selectRandomItem(recipeArray);
