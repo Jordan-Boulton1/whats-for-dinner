@@ -73,7 +73,8 @@ p {
 /* Main content */
 .recipe-area {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Search bar */
@@ -243,12 +244,21 @@ article .ingredient-list {
   font-size: 16px;
 }
 
-/* Footer content */
-
 #returned-recipe-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* media query for screens larger than 320px */
+@media screen and (min-width: 320px) {
+  .search {
+    width: 300px;
+  }
+
+  #random-btn {
+    width: 300px;
+  }
 }
 
 @media screen and (min-width: 425px) {
@@ -258,7 +268,17 @@ article .ingredient-list {
   }
 }
 
-/* media query for screens larger than 1024px*/
+@media screen and (min-width: 768px) {
+  .search {
+    width: 450px;
+  }
+
+  #random-btn {
+    width: 450px;
+  }
+}
+
+/* media query for screens larger than 1024px */
 @media screen and (min-width: 1024px) {
   #title {
     font-size: 72px;
