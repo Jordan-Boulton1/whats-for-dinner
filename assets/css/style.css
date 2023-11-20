@@ -112,12 +112,28 @@ p {
   border-radius: 0 3px 3px 0;
 }
 
-#search-btn:hover {
+#random-btn {
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 42px;
+  width: 100px;
+  color: #fff;
+  background: transparent;
+  border-radius: 0 3px 3px 0;
+  border: 1px solid #fff;
+}
+
+#search-btn:hover,
+#random-btn:hover {
   background: #fff;
   color: #444;
 }
 
-#search-btn:focus {
+#search-btn:focus,
+#random-btn:focus {
   outline: 0;
 }
 
