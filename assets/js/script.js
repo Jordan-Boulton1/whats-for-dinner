@@ -35,6 +35,7 @@ function callApi(ingredientValue) {
         return;
       }
       var returnedRecipes = filterReturnedRecipes(xhttp.response.hits);
+
       let recipeContainer = document.getElementById('returned-recipe-container');
       console.log(returnedRecipes)
       recipeContainer.innerHTML = "";
@@ -56,12 +57,23 @@ function callApi(ingredientValue) {
 function filterReturnedRecipes(recipeArray) {
   var maxRecipes = 8;
   var randomRecipes = [];
-  for (let i = 0; i < maxRecipes; i++) {
-    let randomItem = selectRandomItem(recipeArray);
-    if (randomRecipes.filter(e => e.Id === randomItem.recipe.Id).length > 0) {
-      var randomItem = selectRandomItem(recipeArray);
+  for (let i = 0; i < recipeArray.length; i++) {
+    let filteredItem = selectRandomItem(recipeArray)
+    if (randomRecipes.length == 0) {
+      randomRecipes.push(filteredItem.recipe)
     }
-    randomRecipes.push(randomItem.recipe);
+    if (randomRecipes.length > 0 && randomRecipes.length < maxRecipes) {
+      let findDuplicateIndex = randomRecipes.map(item => item.Id).indexOf(filteredItem.recipe.Id);
+
+      if (findDuplicateIndex === -1) {
+        randomRecipes.push(filteredItem.recipe)
+      } else {
+        let newFilteredItem = selectRandomItem(recipeArray);
+        randomRecipes.splice(findDuplicateIndex, 1);
+        randomRecipes.push(newFilteredItem.recipe)
+      }
+    }
+
   }
   return randomRecipes;
 }
@@ -108,14 +120,26 @@ function renderRecipes(recipe, recipeContainer) {
   </div>
   `
 
-
-
   // takes the text above and transforms into html
   var recipeCardDocument = htmlParser.parseFromString(recipeCard, 'text/html');
   // takes recipe card div from the created document
   var recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
   // takes returned recipe container and appends the recipe card to html
   recipeContainer.appendChild(recipeCardHtml);
+}
+
+/**
+ * 
+ * @param {} recipeLabel 
+ */
+function expandIngredients(recipeLabel) {
+  var expandButton = document.getElementById("content-" + recipeLabel);
+  expandButton.classList.toggle("active");
+  if (expandButton.style.display === "block") {
+    expandButton.style.display = "none";
+  } else {
+    expandButton.style.display = "block";
+  }
 }
 
 /**
