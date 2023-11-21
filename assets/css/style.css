@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mada:wght@500;600&family=Mukta+Vaani:wght@300;400&family=Overpass:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@500;600&family=Mukta+Vaani:wght@300;400&family=Overpass:wght@200;300;400;500&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
@@ -26,7 +26,7 @@ body {
 }
 
 header {
-  color: white;
+  color: #fff;
   display: flex;
   flex-direction: column;
 }
@@ -37,8 +37,13 @@ main {
 }
 
 footer {
-  background-color: orange;
+  background-color: #D4C4B9;
+  color: #000;
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  text-align: center;
 }
 
 h1 {
@@ -55,7 +60,6 @@ h3 {
 
 p {
   font-family: 'Overpass', sans-serif;
-  text-align: center;
   line-height: 25px;
 }
 
@@ -68,6 +72,7 @@ p {
   font-size: 14px;
   padding: 10px;
   align-self: center;
+  text-align: center;
 }
 
 /* Main content */
@@ -92,6 +97,7 @@ p {
   border: 0;
   background: transparent;
   border-radius: 3px 0 0 3px;
+  width: calc(100% - 100px);
 }
 
 #search-term:focus {
@@ -115,7 +121,6 @@ p {
 
 #random-btn {
   position: relative;
-  float: right;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -140,6 +145,23 @@ p {
 
 #instructions {
   margin-top: 10vh;
+  text-align: center;
+}
+
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 
 /* Dynamic recipe cards */
@@ -250,6 +272,40 @@ article .ingredient-list {
   justify-content: center;
 }
 
+/* Footer */
+
+footer p {
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 5px 0 5px;
+}
+
+footer h3 {
+  padding-top: 10px;
+  font-size: 24px;
+}
+
+footer .socials {
+  margin-top: 10px;
+}
+
+footer .socials a {
+  font-size: 30px;
+}
+
+.socials i {
+  color: #000;
+}
+
+.socials i:hover {
+  font-size: 38px;
+}
+
+footer .socials .fa-square-x-twitter,
+footer .socials .fa-square-instagram {
+  margin-left: 20px;
+}
+
 /* media query for screens larger than 320px */
 @media screen and (min-width: 320px) {
   .search {
@@ -261,6 +317,7 @@ article .ingredient-list {
   }
 }
 
+/* media query for screens larger than 425px */
 @media screen and (min-width: 425px) {
   #landing-text {
     width: 400px;
@@ -268,6 +325,7 @@ article .ingredient-list {
   }
 }
 
+/* media query for screens larger than 768px */
 @media screen and (min-width: 768px) {
   .search {
     width: 450px;
@@ -275,6 +333,25 @@ article .ingredient-list {
 
   #random-btn {
     width: 450px;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    width: 33%;
+  }
+
+  footer h3 {
+    width: 33%;
+    font-size: 36px;
+  }
+
+  footer .socials {
+    width: 33%;
   }
 }
 
