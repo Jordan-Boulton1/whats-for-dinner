@@ -22,7 +22,7 @@ body {
   /* Generic project styles */
   color: #3a3a3a;
   font-family: 'Mada', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/katie-smith-uQs1802D0CQ-unsplash.webp) no-repeat fixed center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-image.webp) no-repeat fixed center;
 }
 
 header {
