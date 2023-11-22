@@ -64,7 +64,6 @@ function filterReturnedRecipes(recipeArray) {
     }
     if (randomRecipes.length > 0 && randomRecipes.length < maxRecipes) {
       let findDuplicateIndex = randomRecipes.map(item => item.Id).indexOf(filteredItem.recipe.Id);
-
       if (findDuplicateIndex === -1) {
         randomRecipes.push(filteredItem.recipe)
       } else {
@@ -73,7 +72,6 @@ function filterReturnedRecipes(recipeArray) {
         randomRecipes.push(newFilteredItem.recipe)
       }
     }
-
   }
   return randomRecipes;
 }
@@ -112,9 +110,10 @@ function renderRecipes(recipe, recipeContainer) {
         <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <h3 class="cuisine-type">${recipe.cuisineType.toString()}</h3>
-      <button type="button" class="collapsible" onclick="expandIngredients(\``+ recipe.Id + `\`)">∨</button>
+      <button type="button" class="ingredient-btn" onclick="expandIngredients(\``+ recipe.Id + `\`)">∨</button>
       <div class="content" id="content-${recipe.Id}">
         <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
+        <a href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)"><button type="button" id="recipe-link-btn">View Recipe</button></a>
       </div>
     </article>
   </div>
@@ -128,10 +127,6 @@ function renderRecipes(recipe, recipeContainer) {
   recipeContainer.appendChild(recipeCardHtml);
 }
 
-/**
- * 
- * @param {} recipeLabel 
- */
 function expandIngredients(recipeLabel) {
   var expandButton = document.getElementById("content-" + recipeLabel);
   expandButton.classList.toggle("active");
@@ -155,8 +150,6 @@ function renderIngredients(ingredientLines) {
   }
   return renderedIngredients;
 }
-
-// export api secrets using Obfuscator Tool
 
 function randomButton() {
   var randomItemsArray = new Array("chicken", "beef", "breadcrumbs", "tomato paste", "eggs", "sushi", "prawns", "wraps", "pasta", "rice", "fish", "peppers", "cheese", "curry");
