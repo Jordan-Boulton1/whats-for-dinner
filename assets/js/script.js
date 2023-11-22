@@ -8,8 +8,8 @@ const htmlParser = new DOMParser();
  */
 function searchRecipeApi(event) {
   event.preventDefault();
-  var form = new FormData(event.target);
-  var ingredientValue = form.get("search");
+  let form = new FormData(event.target);
+  let ingredientValue = form.get("search");
   console.log(ingredientValue)
   callApi(ingredientValue);
 }
@@ -18,7 +18,7 @@ function callApi(ingredientValue) {
   const apiKey = exportApiKey();
   const appId = exportApiId();
   let recipeUrl = `https://api.edamam.com/api/recipes/v2?app_id=${appId}&app_key=${apiKey}&type=any&q=${ingredientValue}&mealType=Dinner`;
-  var xhttp = new XMLHttpRequest();
+  let xhttp = new XMLHttpRequest();
 
   xhttp.open("GET", recipeUrl);
   xhttp.send();
@@ -28,13 +28,13 @@ function callApi(ingredientValue) {
   // and that the status is "Ok" (200)
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var errorHandler = document.getElementById('error-handler');
+      let errorHandler = document.getElementById('error-handler');
       errorHandler.innerHTML = "";
       if (xhttp.response.hits.length == 0) {
         errorHandler.innerHTML = "Sorry we couldn't find what you were looking for.";
         return;
       }
-      var returnedRecipes = filterReturnedRecipes(xhttp.response.hits);
+      let returnedRecipes = filterReturnedRecipes(xhttp.response.hits);
 
       let recipeContainer = document.getElementById('returned-recipe-container');
       console.log(returnedRecipes)
@@ -55,8 +55,8 @@ function callApi(ingredientValue) {
  * @returns a 8 length version of the recipe api call.
  */
 function filterReturnedRecipes(recipeArray) {
-  var maxRecipes = 8;
-  var randomRecipes = [];
+  let maxRecipes = 8;
+  let randomRecipes = [];
   for (let i = 0; i < recipeArray.length; i++) {
     let filteredItem = selectRandomItem(recipeArray)
     if (randomRecipes.length == 0) {
@@ -82,7 +82,7 @@ function filterReturnedRecipes(recipeArray) {
  * @returns a random item from the array of elements
  */
 function selectRandomItem(recipeArray) {
-  var randomRecipeIndex = Math.floor(Math.random() * recipeArray.length);
+  let randomRecipeIndex = Math.floor(Math.random() * recipeArray.length);
   // get the recipe id from the api
   let randomItem = recipeArray[randomRecipeIndex];
   let randomItemId = randomItem.recipe.uri.substring(randomItem.recipe.uri.indexOf("_") + 1);
@@ -97,7 +97,7 @@ function selectRandomItem(recipeArray) {
  */
 function renderRecipes(recipe, recipeContainer) {
   let recipeTime = recipe.totalTime == 0 ? 30 : recipe.totalTime;
-  var recipeCard = `
+  let recipeCard = `
   <div class="recipe-card" id="${recipe.Id}">
     <aside>
       <img src=${recipe.images.REGULAR.url} alt="">
@@ -110,7 +110,7 @@ function renderRecipes(recipe, recipeContainer) {
         <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <h3 class="cuisine-type">${recipe.cuisineType.toString()}</h3>
-      <button type="button" class="ingredient-btn" onclick="expandIngredients(\``+ recipe.Id + `\`)">∨</button>
+      <button type="button" class="ingredient-btn" onclick="expandIngredients(\``+ recipe.Id + `\`)">Expand</button>
       <div class="content" id="content-${recipe.Id}">
         <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
         <a href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)"><button type="button" id="recipe-link-btn">View Recipe</button></a>
@@ -120,15 +120,15 @@ function renderRecipes(recipe, recipeContainer) {
   `
 
   // takes the text above and transforms into html
-  var recipeCardDocument = htmlParser.parseFromString(recipeCard, 'text/html');
+  let recipeCardDocument = htmlParser.parseFromString(recipeCard, 'text/html');
   // takes recipe card div from the created document
-  var recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
+  let recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
   // takes returned recipe container and appends the recipe card to html
   recipeContainer.appendChild(recipeCardHtml);
 }
 
 function expandIngredients(recipeLabel) {
-  var expandButton = document.getElementById("content-" + recipeLabel);
+  let expandButton = document.getElementById("content-" + recipeLabel);
   expandButton.classList.toggle("active");
   if (expandButton.style.display === "block") {
     expandButton.style.display = "none";
@@ -143,17 +143,17 @@ function expandIngredients(recipeLabel) {
  * @returns the ingredient text as a rendered "li"
  */
 function renderIngredients(ingredientLines) {
-  var renderedIngredients = [];
+  let renderedIngredients = [];
   for (let i = 0; i < ingredientLines.length; i++) {
-    var ingredientLine = `<li>${ingredientLines[i].text}</li>`
+    let ingredientLine = `<li>${ingredientLines[i].text}</li>`
     renderedIngredients.push(ingredientLine);
   }
   return renderedIngredients;
 }
 
 function randomButton() {
-  var randomItemsArray = new Array("chicken", "beef", "breadcrumbs", "tomato paste", "eggs", "sushi", "prawns", "wraps", "pasta", "rice", "fish", "peppers", "cheese", "curry");
-  var getRandomItem = randomItemsArray[Math.floor(Math.random() * randomItemsArray.length)];
+  let randomItemsArray = new Array("chicken", "beef", "breadcrumbs", "tomato paste", "eggs", "sushi", "prawns", "wraps", "pasta", "rice", "fish", "peppers", "cheese", "curry");
+  let getRandomItem = randomItemsArray[Math.floor(Math.random() * randomItemsArray.length)];
 
   callApi(getRandomItem);
 }
