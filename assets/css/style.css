@@ -177,10 +177,10 @@ kbd {
 
 .recipe-card {
   background-color: #F8F9F7;
-  margin: 4em auto;
+  margin: 2em auto;
   width: 90%;
   max-width: 382px;
-  min-height: 700px;
+  max-height: 700px;
   height: fit-content;
   color: black;
   border: 2px solid #D00000;
