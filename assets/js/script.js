@@ -31,7 +31,7 @@ function callApi(ingredientValue) {
       let errorHandler = document.getElementById('error-handler');
       errorHandler.innerHTML = "";
       if (xhttp.response.hits.length == 0) {
-        errorHandler.innerHTML = "Sorry we couldn't find what you were looking for.";
+        errorHandler.innerHTML = "Sorry we couldn't find what you were looking for. <br> Please enter new ingredients and try again.";
         return;
       }
 
