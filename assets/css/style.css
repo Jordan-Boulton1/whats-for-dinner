@@ -255,6 +255,7 @@ article .ingredient-list {
   font-size: 24px;
   text-align: center;
   height: 80px;
+  overflow: hidden;
 }
 
 .recipe-card h3 {
