@@ -22,28 +22,23 @@ body {
   /* Generic project styles */
   color: #3a3a3a;
   font-family: 'Mada', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-image.webp) no-repeat fixed center;
+  background-color: #EAE0D5;
 }
 
 header {
   color: #fff;
   display: flex;
   flex-direction: column;
+  padding-top: 50px;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-image.webp) no-repeat fixed center;
 }
 
 main {
   flex-grow: 1;
   color: #fff;
-}
-
-footer {
-  background-color: #D4C4B9;
-  color: #000;
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  text-align: center;
 }
 
 h1 {
@@ -65,7 +60,7 @@ p {
 
 /* header */
 #title {
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 #landing-text {
@@ -80,6 +75,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 50px;
 }
 
 /* Search bar */
@@ -135,7 +131,7 @@ p {
 #search-btn:hover,
 #random-btn:hover {
   background: #fff;
-  color: #444;
+  color: #000;
 }
 
 #search-btn:focus,
@@ -165,6 +161,10 @@ kbd {
   white-space: nowrap;
 }
 
+#returned-recipe-container {
+  background-color: #EAE0D5;
+}
+
 /* Dynamic recipe cards */
 #returned-recipe-container img {
   max-width: 100%;
@@ -183,6 +183,7 @@ kbd {
   min-height: 700px;
   height: fit-content;
   color: black;
+  border: 2px solid #D00000;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -203,8 +204,8 @@ kbd {
 }
 
 .recipe-card article {
-  padding: 1.25em 1.5em;
-  background-color: #F8F9F7;
+  padding: 1.25em 1.5em 4em;
+  background-color: #fff;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -214,6 +215,7 @@ kbd {
   margin: 0.5em 0 0;
   padding: 0;
   text-align: center;
+  border: none;
 }
 
 .recipe-card .recipe-info li {
@@ -285,8 +287,8 @@ article .ingredient-list {
 #recipe-link-btn {
   font-family: 'Mukta Vaani', sans-serif;
   font-weight: 400;
-  background-color: #ababab;
-  color: #444;
+  background-color: #9D0208;
+  color: #fff;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -296,54 +298,25 @@ article .ingredient-list {
   border-radius: 10px;
 }
 
+#recipe-link-btn {
+  margin-bottom: 20px;
+}
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS) */
-.active,
 .ingredient-btn:hover,
 #recipe-link-btn:hover {
-  background-color: #D4C4B9;
+  background-color: #fff;
+  color: #9D0208;
+  border: 3px solid #9D0208;
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
+  margin-top: 10px;
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #ececec;
   border-radius: 10px;
-}
-
-/* Footer */
-
-footer p {
-  font-weight: 500;
-  font-size: 15px;
-  padding: 10px 5px 0 5px;
-}
-
-footer h3 {
-  padding-top: 10px;
-  font-size: 24px;
-}
-
-footer .socials {
-  margin-top: 10px;
-}
-
-footer .socials a {
-  font-size: 30px;
-}
-
-.socials i {
-  color: #000;
-}
-
-.socials i:hover {
-  font-size: 38px;
-}
-
-footer .socials .fa-square-x-twitter,
-footer .socials .fa-square-instagram {
-  margin-left: 20px;
 }
 
 /* media query for screens larger than 320px */
@@ -373,25 +346,6 @@ footer .socials .fa-square-instagram {
 
   #random-btn {
     width: 450px;
-  }
-
-  footer {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer p {
-    width: 33%;
-  }
-
-  footer h3 {
-    width: 33%;
-    font-size: 36px;
-  }
-
-  footer .socials {
-    width: 33%;
   }
 }
 
