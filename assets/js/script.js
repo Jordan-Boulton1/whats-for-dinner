@@ -34,14 +34,15 @@ function callApi(ingredientValue) {
         errorHandler.innerHTML = "Sorry we couldn't find what you were looking for.";
         return;
       }
-      let returnedRecipes = filterReturnedRecipes(xhttp.response.hits);
 
       let recipeContainer = document.getElementById('returned-recipe-container');
-      console.log(returnedRecipes)
+      let randomUniqueItems = getRandomUniqueItems(xhttp.response.hits, 8);
+      randomUniqueItems = selectUniqueRecipes(randomUniqueItems);
+      console.log(randomUniqueItems);
       recipeContainer.innerHTML = "";
       // loops through the 8 random recipes returned
-      for (let i = 0; i < returnedRecipes.length; i++) {
-        renderRecipes(returnedRecipes[i], recipeContainer);
+      for (let i = 0; i < randomUniqueItems.length; i++) {
+        renderRecipes(randomUniqueItems[i], recipeContainer);
       }
     }
   }
@@ -76,18 +77,14 @@ function filterReturnedRecipes(recipeArray) {
   return randomRecipes;
 }
 
-/**
- * select a random item from the input array
- * @param recipeArray an array of elements
- * @returns a random item from the array of elements
- */
-function selectRandomItem(recipeArray) {
-  let randomRecipeIndex = Math.floor(Math.random() * recipeArray.length);
-  // get the recipe id from the api
-  let randomItem = recipeArray[randomRecipeIndex];
-  let randomItemId = randomItem.recipe.uri.substring(randomItem.recipe.uri.indexOf("_") + 1);
-  randomItem.recipe.Id = randomItemId;
-  return randomItem;
+function selectUniqueRecipes(recipeArray) {
+  let randomUniqueRecipes = [];
+  for (let i = 0; i < recipeArray.length; i++) {
+    let randomItemId = recipeArray[i].recipe.uri.substring(recipeArray[i].recipe.uri.indexOf("_") + 1);
+    recipeArray[i].recipe.Id = randomItemId;
+    randomUniqueRecipes.push(recipeArray[i].recipe);
+  }
+  return randomUniqueRecipes;
 }
 
 /**
@@ -149,6 +146,19 @@ function renderIngredients(ingredientLines) {
     renderedIngredients.push(ingredientLine);
   }
   return renderedIngredients;
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function getRandomUniqueItems(array, count) {
+  const shuffledArray = array.slice(); // Create a copy to avoid modifying the original array
+  shuffleArray(shuffledArray);
+  return shuffledArray.slice(0, count);
 }
 
 function randomButton() {
