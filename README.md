@@ -30,3 +30,37 @@ I used [coolors.co](https://coolors.co/ffffff-eae0d5-9d0208-000000) to generate 
 - [Overpass](https://fonts.google.com/specimen/Overpass?query=Overpass) was used for all paragraphs and list ingredients on the page.
 
 - [Font Awesome](https://fontawesome.com) icons were used on the dynamically loaded recipe cards to display how many people the recipes will feed, the time to make the recipe and how many calories are in the recipe.
+
+## Wireframes
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframe
+
+<details>
+<summary> Click here to see the Mobile Wireframes </summary>
+
+Home
+  - ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/wireframes/mobile-wireframe.png)
+</details>
+
+### Tablet Wireframe
+
+<details>
+<summary> Click here to see the Tablet Wireframes </summary>
+
+Home
+  - ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/wireframes/tablet-wireframe.png)
+
+</details>
+
+### Desktop Wireframe
+
+<details>
+<summary> Click here to see the Desktop Wireframes </summary>
+
+Home
+  - ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/wireframes/desktop-wireframe.png)
+
+</details>
