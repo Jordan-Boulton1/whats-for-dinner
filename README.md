@@ -88,7 +88,7 @@ There are several features on the page which are easy to follow and navigate, cr
 
     - The dynamically loaded recipe cards are generated through an API when the user clicks the search button or the random button.
     - The recipe cards contain;
-    
+
 ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/recipe-card-img.png)
 > An image related to the recipe
 
@@ -106,6 +106,8 @@ There are several features on the page which are easy to follow and navigate, cr
 
 ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/cuisine-type.png)
 > The cuisine type
+
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/cards-feat.png)
   
 - **Recipe Card - Expanded Content**
 
