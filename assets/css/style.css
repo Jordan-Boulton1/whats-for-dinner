@@ -53,7 +53,8 @@ h3 {
   font-family: 'Mukta Vaani', sans-serif;
 }
 
-p {
+p,
+button {
   font-family: 'Overpass', sans-serif;
   line-height: 25px;
 }
@@ -183,7 +184,7 @@ kbd {
   max-height: 700px;
   height: fit-content;
   color: black;
-  border: 2px solid #D00000;
+  border: 2px solid #9D0208;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -286,7 +287,6 @@ article .ingredient-list {
 /* Style the button that is used to open and close the collapsible content */
 .ingredient-btn,
 #recipe-link-btn {
-  font-family: 'Mukta Vaani', sans-serif;
   font-weight: 400;
   background-color: #9D0208;
   color: #fff;
