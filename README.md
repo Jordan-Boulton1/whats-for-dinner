@@ -114,3 +114,16 @@ There are several features on the page which are easy to follow and navigate, cr
     - Also featured on the card is a "**Expand Button.**" When the user clicks on the expand button, the recipe ingredients drop down, allowing the user to easily see the required ingredients in order to make the specific recipe.
     - Also contained within the **Expand** dropdown is a **View Recipe** button. This gives the user easy access to the related recipe website in order to see the method on how to make the recipe.
 ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/expand-content.png)
+
+## Tools & Technologies Used
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
+- [JavaScript](https://www.javascript.com) used for user interaction on the site.
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) used for secure online code storage.
+- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
+- [Visual Studio Code](https://code.visualstudio.com/) used as a cloud-based IDE for development.
+- [Balsamiq](https://balsamiq.com/) used to create wireframes in early development.
+- [Edamam](https://developer.edamam.com/edamam-recipe-api) recipe search API used to integrate a recipe database.
