@@ -2,17 +2,12 @@
 
 const htmlParser = new DOMParser();
 
-/**
- * function that calls the recipe api
- * @param ingredientValue - ingredient provided by the user in order to get recipes from the api. 
- */
-function searchRecipeApi(event) {
+document.getElementById('search-btn').addEventListener("click", function (event) {
   event.preventDefault();
-  let form = new FormData(event.target);
-  let ingredientValue = form.get("search");
+  let ingredientValue = document.getElementById("search-term").value;
   console.log(ingredientValue);
   callApi(ingredientValue);
-}
+});
 
 function callApi(ingredientValue) {
   const apiKey = exportApiKey();
@@ -139,6 +134,7 @@ function getRandomUniqueItems(array, count) {
 }
 
 function randomButton() {
+  document.getElementById("search-term").value = "";
   let randomItemsArray = new Array("chicken", "beef", "breadcrumbs", "tomato paste", "eggs", "sushi", "prawns", "wraps", "pasta", "rice", "fish", "peppers", "cheese", "curry");
   let getRandomItem = randomItemsArray[Math.floor(Math.random() * randomItemsArray.length)];
 
