@@ -10,7 +10,7 @@ function searchRecipeApi(event) {
   event.preventDefault();
   let form = new FormData(event.target);
   let ingredientValue = form.get("search");
-  console.log(ingredientValue)
+  console.log(ingredientValue);
   callApi(ingredientValue);
 }
 
@@ -35,46 +35,23 @@ function callApi(ingredientValue) {
         return;
       }
 
+      let recipesWithIds = selectUniqueRecipes(xhttp.response.hits);
+      recipesWithIds = filterFaultyRecipesFromApi(recipesWithIds);
+      console.log(recipesWithIds);
       let recipeContainer = document.getElementById('returned-recipe-container');
-      let randomUniqueItems = getRandomUniqueItems(xhttp.response.hits, 8);
-      randomUniqueItems = selectUniqueRecipes(randomUniqueItems);
-      console.log(randomUniqueItems);
+      let randomUniqueItems = getRandomUniqueItems(recipesWithIds, 8);
       recipeContainer.innerHTML = "";
       // loops through the 8 random recipes returned
       for (let i = 0; i < randomUniqueItems.length; i++) {
         renderRecipes(randomUniqueItems[i], recipeContainer);
       }
     }
-  }
+  };
 }
 
-
-/**
- * function that selects 8 random recipes from the array of the api call and 
- * ensures there are no duplicates.
- * @param recipeArray - recipes from the api call.
- * @returns a 8 length version of the recipe api call.
- */
-function filterReturnedRecipes(recipeArray) {
-  let maxRecipes = 8;
-  let randomRecipes = [];
-  for (let i = 0; i < recipeArray.length; i++) {
-    let filteredItem = selectRandomItem(recipeArray)
-    if (randomRecipes.length == 0) {
-      randomRecipes.push(filteredItem.recipe)
-    }
-    if (randomRecipes.length > 0 && randomRecipes.length < maxRecipes) {
-      let findDuplicateIndex = randomRecipes.map(item => item.Id).indexOf(filteredItem.recipe.Id);
-      if (findDuplicateIndex === -1) {
-        randomRecipes.push(filteredItem.recipe)
-      } else {
-        let newFilteredItem = selectRandomItem(recipeArray);
-        randomRecipes.splice(findDuplicateIndex, 1);
-        randomRecipes.push(newFilteredItem.recipe)
-      }
-    }
-  }
-  return randomRecipes;
+function filterFaultyRecipesFromApi(recipesWithIds) {
+  console.log(recipesWithIds);
+  return recipesWithIds.filter(item => item.Id != "b2cb2273a19b40ad4b2ee01181de2f67" && item.Id != "b6059ba07ff9441a76572ba622c6ed83");
 }
 
 function selectUniqueRecipes(recipeArray) {
@@ -107,14 +84,14 @@ function renderRecipes(recipe, recipeContainer) {
         <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <h3 class="cuisine-type">${recipe.cuisineType.toString()}</h3>
-      <button type="button" class="ingredient-btn" onclick="expandIngredients(\``+ recipe.Id + `\`)">Expand</button>
+      <button type="button active-btn" class="ingredient-btn" onclick="expandIngredients(\``+ recipe.Id + `\`)">Expand</button>
       <div class="content" id="content-${recipe.Id}">
         <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
         <a href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)"><button type="button" id="recipe-link-btn">View Recipe</button></a>
       </div>
     </article>
   </div>
-  `
+  `;
 
   // takes the text above and transforms into html
   let recipeCardDocument = htmlParser.parseFromString(recipeCard, 'text/html');
@@ -126,7 +103,7 @@ function renderRecipes(recipe, recipeContainer) {
 
 function expandIngredients(recipeLabel) {
   let expandButton = document.getElementById("content-" + recipeLabel);
-  expandButton.classList.toggle("active");
+  expandButton.classList.toggle("active")
   if (expandButton.style.display === "block") {
     expandButton.style.display = "none";
   } else {
@@ -142,7 +119,7 @@ function expandIngredients(recipeLabel) {
 function renderIngredients(ingredientLines) {
   let renderedIngredients = [];
   for (let i = 0; i < ingredientLines.length; i++) {
-    let ingredientLine = `<li>${ingredientLines[i].text}</li>`
+    let ingredientLine = `<li>${ingredientLines[i].text}</li>`;
     renderedIngredients.push(ingredientLine);
   }
   return renderedIngredients;
