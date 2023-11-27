@@ -20,3 +20,13 @@ The colours chosen on my website were taken as inspiration from various differen
 I used [coolors.co](https://coolors.co/ffffff-eae0d5-9d0208-000000) to generate my colour palette.
 
 ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/coolors.png)
+
+### Typography
+
+- [Mada](https://fonts.google.com/specimen/Mada?query=mada) was used for the primary title.
+
+- [Mukta Vaani](https://fonts.google.com/specimen/Mukta+Vaani?query=Mukta) was used for the recipe card title and cuisine type.
+
+- [Overpass](https://fonts.google.com/specimen/Overpass?query=Overpass) was used for all paragraphs and list ingredients on the page.
+
+- [Font Awesome](https://fontawesome.com) icons were used on the dynamically loaded recipe cards to display how many people the recipes will feed, the time to make the recipe and how many calories are in the recipe.
