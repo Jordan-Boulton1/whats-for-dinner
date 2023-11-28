@@ -115,6 +115,11 @@ There are several features on the page which are easy to follow and navigate, cr
     - Also contained within the **Expand** dropdown is a **View Recipe** button. This gives the user easy access to the related recipe website in order to see the method on how to make the recipe.
 ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/expand-content.png)
 
+### Future Features
+
+- Favourite Recipe
+    - I would have loved to add the ability to save a recipe as a favourite where the user could return to their favourite recipes at a later date.
+
 ## Tools & Technologies Used
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
