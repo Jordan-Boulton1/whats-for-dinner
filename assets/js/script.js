@@ -120,9 +120,9 @@ function renderRecipes(recipe, recipeContainer) {
 function expandIngredients(recipeId) {
   let expandContent = document.getElementById("content-" + recipeId);
   let expandBtn = document.getElementById("btn-" + recipeId);
-  expandContent.classList.toggle("active")
+  expandContent.classList.toggle("active");
   if (expandContent.style.display === "block") {
-    expandBtn.innerHTML = "Show"
+    expandBtn.innerHTML = "Show";
     expandContent.style.display = "none";
   } else {
     expandBtn.innerHTML = "Hide";
