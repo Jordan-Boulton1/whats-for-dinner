@@ -9,6 +9,11 @@ document.getElementById('search-btn').addEventListener("click", function (event)
   callApi(ingredientValue);
 });
 
+document.getElementById('random-btn').addEventListener("click", function (event) {
+  event.preventDefault();
+  randomButton();
+});
+
 function callApi(ingredientValue) {
   const apiKey = exportApiKey();
   const appId = exportApiId();
@@ -44,9 +49,15 @@ function callApi(ingredientValue) {
   };
 }
 
+
 function filterFaultyRecipesFromApi(recipesWithIds) {
   console.log(recipesWithIds);
-  return recipesWithIds.filter(item => item.Id != "b2cb2273a19b40ad4b2ee01181de2f67" && item.Id != "b6059ba07ff9441a76572ba622c6ed83");
+  return recipesWithIds.filter(item =>
+    item.Id != "b2cb2273a19b40ad4b2ee01181de2f67"
+    && item.Id != "b6059ba07ff9441a76572ba622c6ed83"
+    && item.Id != "feae839eb15c7959e1fbafa8ffb2c7df"
+    && item.Id != "24ef4d12d940a7afe7cc491561354132"
+    && item.Id != "3c9621517f60ff37eaec13587b7730ef");
 }
 
 function selectUniqueRecipes(recipeArray) {
@@ -79,7 +90,7 @@ function renderRecipes(recipe, recipeContainer) {
         <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <h3 class="cuisine-type">${recipe.cuisineType.toString()}</h3>
-      <button type="button active-btn" class="ingredient-btn" onclick="expandIngredients(\``+ recipe.Id + `\`)">Expand</button>
+      <button type="button active-btn" class="ingredient-btn" id="btn-${recipe.Id}">Expand</button>
       <div class="content" id="content-${recipe.Id}">
         <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
         <a href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)"><button type="button" id="recipe-link-btn">View Recipe</button></a>
@@ -94,15 +105,20 @@ function renderRecipes(recipe, recipeContainer) {
   let recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
   // takes returned recipe container and appends the recipe card to html
   recipeContainer.appendChild(recipeCardHtml);
+
+  document.getElementById("btn-" + recipe.Id).addEventListener("click", function (event) {
+    event.preventDefault();
+    expandIngredients(recipe.Id);
+  });
 }
 
-function expandIngredients(recipeLabel) {
-  let expandButton = document.getElementById("content-" + recipeLabel);
-  expandButton.classList.toggle("active")
-  if (expandButton.style.display === "block") {
-    expandButton.style.display = "none";
+function expandIngredients(recipeId) {
+  let expandContent = document.getElementById("content-" + recipeId);
+  expandContent.classList.toggle("active")
+  if (expandContent.style.display === "block") {
+    expandContent.style.display = "none";
   } else {
-    expandButton.style.display = "block";
+    expandContent.style.display = "block";
   }
 }
 
