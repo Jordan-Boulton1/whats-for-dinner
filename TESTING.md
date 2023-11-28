@@ -26,6 +26,6 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Home | Expanded Cards | Notes |
 | --- | --- | --- | --- |
-| Chrome | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/chrome-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/chrome-cards-compatibility.png) | Works as expected |
-| Firefox | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/firefox-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/firefox-cards-compatibility.png) | Works as expected |
-| Edge | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/edge-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/edge-cards-compatibility.png) | Works as expected |
+| Chrome | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/chrome-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/chrome-cards-compatibility.png) | Works as expected |
+| Firefox | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/firefox-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/firefox-cards-compatibility.png) | Works as expected |
+| Edge | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/edge-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/edge-cards-compatibility.png) | Works as expected |
