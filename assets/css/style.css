@@ -181,7 +181,6 @@ kbd {
   margin: 2em auto;
   width: 90%;
   max-width: 382px;
-  max-height: 700px;
   height: fit-content;
   color: black;
   border: 2px solid #9D0208;
@@ -241,6 +240,7 @@ kbd {
 }
 
 article .ingredient-list {
+  font-family: 'Overpass', sans-serif;
   list-style-type: disc;
   margin-left: 1em;
   line-height: 1.5em;
@@ -347,6 +347,10 @@ article .ingredient-list {
 
   #random-btn {
     width: 450px;
+  }
+
+  .recipe-card {
+    width: 350px;
   }
 }
 
