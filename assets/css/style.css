@@ -16,7 +16,7 @@ input:-webkit-autofill:focus {
 
 /* General styles */
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   /* Generic project styles */
@@ -24,14 +24,7 @@ body {
   font-family: 'Mada', sans-serif;
   background-color: #EAE0D5;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-image.webp);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-.ios-body {
-  background-attachment: initial !important;
-  background-size: cover !important;
+  background-size: cover;
 }
 
 header {
