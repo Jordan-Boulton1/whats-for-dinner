@@ -179,3 +179,37 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Jordan-Boulton1/whats-for-dinner)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+## Credits
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
+| [Font Joy](https://fontjoy.com/) | entire site | tool to generate font pairings |
+| [Google Fonts](https://fonts.google.com/) | entire site | tool to import fonts |
+| [Slider Revolution](https://www.sliderrevolution.com/resources/css-search-box/) | entire site | transparent search box |
+| [O'Reilly](https://www.oreilly.com/videos/50-projects-in/9781801079976/) | entire site | how to work with apis (netflix project) |
+| [freeCodeCamp](https://www.freecodecamp.org/news/javascript-get-request-tutorial/) | script.js | how to make a http request |
+| [Obfuscator](https://obfuscator.io/#code) | entire site | used to hide the api key | 
+| [Stackoverflow](https://stackoverflow.com/questions/4092325/how-to-remove-part-of-a-string-before-a-in-javascript) | script.js | used to get the API ID |
+| [FreeFrontend](https://freefrontend.com/css-recipe-cards/) | entire site | used card #3 as inspiration |
+| [Grrr Tech](https://grrr.tech/posts/create-dom-node-from-html-string/) | entire site | create a DOM node from an HTML string |
+| [Stackoverflow](https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied) | search bar | used to fix a bug on chrome browser which caused <br> a white box to appear while clicked inside the search input |
+| [w3schools](https://www.w3schools.com/howto/howto_js_accordion.asp) | recipe card | used to help create the drop down button |
+| [Modzilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd) | entire site | how to work with ```<kbd>``` input element |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Unsplash](https://unsplash.com/photos/avocado-tomatoes-eggs-mushrooms-spring-onions-and-leaves-uQs1802D0CQ) | home page | image | hero image background |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
+- I would like to thank my partner (Stefani), for believing in me, and allowing me to make this transition into software development.
