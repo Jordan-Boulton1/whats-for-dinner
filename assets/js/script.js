@@ -90,7 +90,7 @@ function renderRecipes(recipe, recipeContainer) {
         <li><span class="icon fa-solid fa-fire"></span><span>${Math.round(recipe.calories)}</span></li>
       </ul>
       <h3 class="cuisine-type">${recipe.cuisineType.toString()}</h3>
-      <button type="button active-btn" class="ingredient-btn" id="btn-${recipe.Id}">Expand</button>
+      <button type="button active-btn" class="ingredient-btn" id="btn-${recipe.Id}">Show</button>
       <div class="content" id="content-${recipe.Id}">
         <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
         <a href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)"><button type="button" id="recipe-link-btn">View Recipe</button></a>
@@ -114,10 +114,13 @@ function renderRecipes(recipe, recipeContainer) {
 
 function expandIngredients(recipeId) {
   let expandContent = document.getElementById("content-" + recipeId);
+  let expandBtn = document.getElementById("btn-" + recipeId);
   expandContent.classList.toggle("active")
   if (expandContent.style.display === "block") {
+    expandBtn.innerHTML = "Show"
     expandContent.style.display = "none";
   } else {
+    expandBtn.innerHTML = "Hide";
     expandContent.style.display = "block";
   }
 }
