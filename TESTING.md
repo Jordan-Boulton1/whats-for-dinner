@@ -40,3 +40,11 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Tablet (DevTools) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/tablet-chrome-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/tablet-chrome-card-responsiveness.png) | Works as expected |
 | Desktop | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/desktop-chrome-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/desktop-chrome-card-responsiveness.png) | Works as expected |
 | iPhone 11 | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/iphone11-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/iphone11-card-responsiveness.png) | Works as expected |
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/lighthouse/mobile-lighthouse.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/lighthouse/desktop-lighthouse.png) | Some minor warnings |
