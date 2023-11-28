@@ -23,6 +23,11 @@ body {
   color: #3a3a3a;
   font-family: 'Mada', sans-serif;
   background-color: #EAE0D5;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-image.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 header {
@@ -30,13 +35,6 @@ header {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
-}
-
-body {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-image.webp);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
 }
 
 main {
