@@ -1,6 +1,8 @@
 /*jshint esversion: 11*/
 
+
 const htmlParser = new DOMParser();
+loadCache();
 
 document.getElementById('search-btn').addEventListener("click", function (event) {
   event.preventDefault();
@@ -29,18 +31,21 @@ function callApi(ingredientValue) {
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       let errorHandler = document.getElementById('error-handler');
+      let recipeContainer = document.getElementById('returned-recipe-container');
+      recipeContainer.innerHTML = "";
       errorHandler.innerHTML = "";
       if (xhttp.response.hits.length == 0) {
         errorHandler.innerHTML = "Sorry we couldn't find what you were looking for. <br> Please enter new ingredients and try again.";
+        recipeContainer.innerHTML = "";
         return;
       }
 
       let recipesWithIds = selectUniqueRecipes(xhttp.response.hits);
       recipesWithIds = filterFaultyRecipesFromApi(recipesWithIds);
       console.log(recipesWithIds);
-      let recipeContainer = document.getElementById('returned-recipe-container');
       let randomUniqueItems = getRandomUniqueItems(recipesWithIds, 8);
-      recipeContainer.innerHTML = "";
+      localStorage.setItem("cached-recipes", JSON.stringify(randomUniqueItems));
+
       // loops through the 8 random recipes returned
       for (let i = 0; i < randomUniqueItems.length; i++) {
         renderRecipes(randomUniqueItems[i], recipeContainer);
@@ -158,4 +163,19 @@ function randomButton() {
   let getRandomItem = randomItemsArray[Math.floor(Math.random() * randomItemsArray.length)];
 
   callApi(getRandomItem);
+}
+
+function loadCache() {
+  let getRecipesFromCache = localStorage.getItem("cached-recipes");
+  console.log(getRecipesFromCache);
+  if (getRecipesFromCache == null) {
+    return;
+  }
+  getRecipesFromCache = JSON.parse(getRecipesFromCache);
+  let recipeContainer = document.getElementById('returned-recipe-container');
+  recipeContainer.innerHTML = "";
+  // loops through the 8 random recipes returned
+  for (let i = 0; i < getRecipesFromCache.length; i++) {
+    renderRecipes(getRecipesFromCache[i], recipeContainer);
+  }
 }
