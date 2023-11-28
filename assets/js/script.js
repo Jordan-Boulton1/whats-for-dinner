@@ -4,6 +4,12 @@
 const htmlParser = new DOMParser();
 loadCache();
 
+let isUserOnIos = navigator.userAgent.match(/(iPod | iPhone | iPad)/);
+
+if (isUserOnIos) {
+  document.getElementsByTagName("body").classList.add("ios-body");
+}
+
 document.getElementById('search-btn').addEventListener("click", function (event) {
   event.preventDefault();
   let ingredientValue = document.getElementById("search-term").value;

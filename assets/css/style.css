@@ -29,6 +29,11 @@ body {
   background-position: center;
 }
 
+.ios-body {
+  background-attachment: initial !important;
+  background-size: cover !important;
+}
+
 header {
   color: #fff;
   display: flex;
