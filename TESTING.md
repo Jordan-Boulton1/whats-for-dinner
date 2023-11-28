@@ -29,3 +29,14 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Chrome | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/compatibility/chrome-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/compatibility/chrome-cards-compatibility.png) | Works as expected |
 | Firefox | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/compatibility/firefox-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/compatibility/firefox-cards-compatibility.png) | Works as expected |
 | Edge | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/compatibility/edge-compatibility.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/compatibility/edge-cards-compatibility.png) | Works as expected |
+
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device | Home | Cards | Notes |
+| --- | --- | --- | --- |
+| Mobile (DevTools) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/moblie-chrome-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/mobile-chrome-card-responsiveness.png) | Works as expected |
+| Tablet (DevTools) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/tablet-chrome-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/tablet-chrome-card-responsiveness.png) | Works as expected |
+| Desktop | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/desktop-chrome-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/desktop-chrome-card-responsiveness.png) | Works as expected |
+| iPhone 11 | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/iphone11-responsiveness.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/responsiveness/iphone11-card-responsiveness.png) | Works as expected |
