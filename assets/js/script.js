@@ -75,8 +75,24 @@ function randomButton() {
 
 document.getElementById('search-btn').addEventListener("click", function (event) {
   event.preventDefault();
-  let ingredientValue = document.getElementById("search-term").value;
-  callApi(ingredientValue);
+  let ingredientValue = document.getElementById("search-term");
+  let errorHandler = document.getElementById('error-handler');
+
+  // Define a regular expression for the pattern of text separated by commas
+  const regex = /^[a-zA-Z]+(?:,\s[a-zA-Z]+)*$/;
+  if (ingredientValue.value === "") {
+    errorHandler.innerHTML = "Please provide a valid search term";
+    return; //Breaks code execution
+  }
+
+  //Tests the input from the field against the allowed patterns, if its false, meaning the test failed, show the error handler
+  if (regex.test(ingredientValue.value)) {
+    callApi(ingredientValue.value);
+    return;
+  }
+  errorHandler.innerHTML = "Please provide a valid search term";
+  return;//Breaks code execution
+
 });
 
 /**
