@@ -79,7 +79,7 @@ document.getElementById('search-btn').addEventListener("click", function (event)
   let errorHandler = document.getElementById('error-handler');
 
   // Define a regular expression for the pattern of text separated by commas
-  const regex = /^[a-zA-Z]+(?:,\s[a-zA-Z]+)*$/;
+  const regex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
   if (ingredientValue.value === "") {
     errorHandler.innerHTML = "Please provide a valid search term";
     return; //Breaks code execution
@@ -172,6 +172,7 @@ function mapRecipesWithIds(recipeArray) {
 }
 
 /**
+ * removes duplicate ids from the recipe
  * filters through the array to ensure the items with these specified ids are removed.
  * @param recipesWithIds - 20 recipes with assigned ids
  * @returns a filtered array without these ids
