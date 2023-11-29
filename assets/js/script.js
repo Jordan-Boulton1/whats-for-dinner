@@ -1,23 +1,65 @@
 /*jshint esversion: 11*/
 
 const htmlParser = new DOMParser();
+const apiKey = exportApiKey();
+const appId = exportApiId();
+
 loadCache();
 
+/**
+ * checks if there is recipe ids in local storage, if no break out of function. 
+ * If something is in local storage gets it and parses it as an json array then calls 
+ * the rendered recipes cards to the html.
+ * @returns - breaks out of code function
+ */
 function loadCache() {
   let getRecipesFromCache = localStorage.getItem("cached-recipes");
   if (getRecipesFromCache == null) {
     return;
   }
   getRecipesFromCache = JSON.parse(getRecipesFromCache);
-  let recipeContainer = document.getElementById('returned-recipe-container');
-  recipeContainer.innerHTML = "";
-  renderRecipes(getRecipesFromCache, recipeContainer);
+  callApiByIdsAndRenderRecipes(getRecipesFromCache);
+
 }
 
 document.getElementById('random-btn').addEventListener("click", function (event) {
   event.preventDefault();
   randomButton();
 });
+
+/**
+ * The function opens a connection to the recipe api using XMLHttpRequest to get by recipe id
+ * and renders the returned recipe to the html
+ * @param recipeIdsFromCache - array of cached ids
+ */
+function callApiByIdsAndRenderRecipes(recipeIdsFromCache) {
+  let recipeContainer = document.getElementById('returned-recipe-container');
+  recipeContainer.innerHTML = "";
+  for (let i = 0; i < recipeIdsFromCache.length; i++) {
+    let recipeUrl = `https://api.edamam.com/api/recipes/v2/${recipeIdsFromCache[i]}?app_id=${appId}&app_key=${apiKey}&type=public`;
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", recipeUrl);
+    xhttp.send();
+    xhttp.responseType = "json";
+
+    // onload processes the request, then when the request is processed we evaluate
+    // the response by checking if the ready state is ready and completed (4)
+    // and that the status is "Ok" (200)
+    xhttp.onload = () => {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        let recipe = xhttp.response.recipe;
+        recipe.Id = recipeIdsFromCache[i];
+        let recipeCardDocument = buildHtmlForRecipeCard(recipe);
+        // takes recipe card div from the created document
+        let recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
+        // takes returned recipe container and appends the recipe card to html
+        recipeContainer.appendChild(recipeCardHtml);
+        addFunctionalityToCardButton(recipe.Id);
+      }
+    };
+  }
+}
 
 /**
  * Creates an array of ingredients/food. Selects a random item from the array
@@ -42,8 +84,6 @@ document.getElementById('search-btn').addEventListener("click", function (event)
  * @param ingredientValue - expects a value of an ingredient/food
  */
 function callApi(ingredientValue) {
-  const apiKey = exportApiKey();
-  const appId = exportApiId();
   let recipeUrl = `https://api.edamam.com/api/recipes/v2?app_id=${appId}&app_key=${apiKey}&type=any&q=${ingredientValue}&mealType=Dinner`;
   let xhttp = new XMLHttpRequest();
 
@@ -94,7 +134,8 @@ function cleanupRecipeArrayFromApi(apiRecipes) {
   let recipesWithIds = mapRecipesWithIds(apiRecipes);
   recipesWithIds = filterFaultyRecipesFromApi(recipesWithIds);
   let randomUniqueRecipes = getRandomUniqueRecipes(recipesWithIds, 8);
-  localStorage.setItem("cached-recipes", JSON.stringify(randomUniqueRecipes));
+  let randomUniqueIds = randomUniqueRecipes.map(item => item.Id);
+  localStorage.setItem("cached-recipes", JSON.stringify(randomUniqueIds));
   return randomUniqueRecipes;
 }
 
