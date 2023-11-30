@@ -132,6 +132,7 @@ There are several features on the page which are easy to follow and navigate, cr
 - [Visual Studio Code](https://code.visualstudio.com/) used as a cloud-based IDE for development.
 - [Balsamiq](https://balsamiq.com/) used to create wireframes in early development.
 - [Edamam](https://developer.edamam.com/edamam-recipe-api) recipe search API used to integrate a recipe database.
+- [Obfuscator](https://obfuscator.io/) used to hide the API key and API ID.
 
 ## Testing
 
