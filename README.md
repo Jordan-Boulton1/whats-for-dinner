@@ -182,6 +182,37 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
+#### API Integration
+
+In order to consume the API that was used in the project, please follow these steps:
+
+1. Go to the following address [edamam.com](https://www.edamam.com/).
+2. In the navbar at the top right, click on the "Signup API" button. This will redirect you to a from that you are required to fill out all of the information provided. **IMPORTANT: make sure to choose the "developer" plan under the "Recipe Search API" category.**
+3. Login with the information you just registered making sure the "Edamam APIs" tab is selected at the top of the sign in modal.
+4. Once singed in, click on the "Accounts" button in the navbar in the top right and once the modal pops up, click on the "Go to Dashboard" button.
+5. Locate the "Applications" tab and click the "Create a new application" button.
+6. Once redirected, you will be given an option of 3 different services, make sure to select the "Recipe Search API" option.
+7. When redirected, give your project a name i.e "Personal Recipe Project" and a description i.e "Recipe generator" and click "Create Application" at the bottom right of the form.
+8. You should now have your own unique Application ID and Application Key.
+9. Copy the Application Key and paste it into your javascript file. i.e ```const apiKey = *insert api key*;```.
+10. Repeat step 9 for the Application ID.
+
+#### Optional:
+
+1. Locate the [Obfuscator Tool](https://obfuscator.io/).
+2. Remove the text inside of the code block.
+3. Create a function inside of the code block and paste your unique api key inside of the function you just created. It should look similar to the following:
+```js
+function exportApiKey() {
+  return "paste api key within these double quotes";
+}
+```
+4. After creating your function, click on the "Obfuscate" button.
+5. Copy the code given by the Obfuscator and paste it into the your javascript file.
+6. Inside of your javascript file, at any point now you will be able to call your function. i.e ```exportApiKey();```
+7. Repeat steps 1-6 for the ```exportApiId();```.
+8. You should now have a working API with two API secrets that are hard to copy, which makes it harder to steal your API secrets.
+
 ## Credits
 
 ### Content
