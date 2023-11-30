@@ -255,7 +255,7 @@ function buildHtmlForRecipeCard(recipe) {
       <button type="button active-btn" class="ingredient-btn" id="btn-${recipe.Id}">Show</button>
       <div class="content" id="content-${recipe.Id}">
         <p class="recipe-ingredients"><ul class="ingredient-list">${renderIngredients(recipe.ingredients).join("")}</ul></p>
-        <a href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)"><button type="button" id="recipe-link-btn">View Recipe</button></a>
+        <a id="recipe-link-btn" href="${recipe.url}" target="_blank" aria-label="takes you to the recipe website (opens in new tab)">View Recipe</a>
       </div>
     </article>
   </div>

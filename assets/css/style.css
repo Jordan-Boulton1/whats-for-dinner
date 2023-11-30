@@ -203,7 +203,7 @@ kbd {
 }
 
 .recipe-card article {
-  padding: 1.25em 1.5em 4em;
+  padding: 1.25em 1.5em;
   background-color: #fff;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -299,7 +299,10 @@ article .ingredient-list {
 }
 
 #recipe-link-btn {
-  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS) */
