@@ -133,6 +133,7 @@ There are several features on the page which are easy to follow and navigate, cr
 - [Balsamiq](https://balsamiq.com/) used to create wireframes in early development.
 - [Edamam](https://developer.edamam.com/edamam-recipe-api) recipe search API used to integrate a recipe database.
 - [Obfuscator](https://obfuscator.io/) used to hide the API key and API ID.
+- [Ionos](https://www.ionos.co.uk/tools/favicon-generator#tool) used to generate the favicon files.
 
 ## Testing
 
