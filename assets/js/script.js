@@ -172,18 +172,19 @@ function mapRecipesWithIds(recipeArray) {
 }
 
 /**
- * removes duplicate ids from the recipe
+ * removes duplicate and faulty ids from the recipe
  * filters through the array to ensure the items with these specified ids are removed.
  * @param recipesWithIds - 20 recipes with assigned ids
  * @returns a filtered array without these ids
  */
 function filterFaultyRecipesFromApi(recipesWithIds) {
   return recipesWithIds.filter(item =>
-    item.Id != "b2cb2273a19b40ad4b2ee01181de2f67" &&
-    item.Id != "b6059ba07ff9441a76572ba622c6ed83" &&
-    item.Id != "feae839eb15c7959e1fbafa8ffb2c7df" &&
-    item.Id != "24ef4d12d940a7afe7cc491561354132" &&
-    item.Id != "3c9621517f60ff37eaec13587b7730ef");
+    item.Id != "b2cb2273a19b40ad4b2ee01181de2f67" && // Rainbow rice - duplicate recipe with a different ID.
+    item.Id != "b6059ba07ff9441a76572ba622c6ed83" && // Spanish Garlic Prawns - extremely small image causing card to not render properly.
+    item.Id != "feae839eb15c7959e1fbafa8ffb2c7df" && // Crisp Sushi-Rice Cakes - duplicate recipe with a different ID.
+    item.Id != "24ef4d12d940a7afe7cc491561354132" && // Individual Coconut Cakes - extremely small image causing card to not render properly.
+    item.Id != "99108913a82294bb61543d534ea06b43" && // Spicy Tuna & Avocado Chirashi - domain no longer live.
+    item.Id != "3c9621517f60ff37eaec13587b7730ef");  // Individual Chocolate and Peanut Butter Bundt Cakes - extremely small image causing card to not render properly.
 }
 
 /**
