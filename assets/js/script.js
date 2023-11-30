@@ -43,22 +43,42 @@ function callApiByIdsAndRenderRecipes(recipeIdsFromCache) {
     xhttp.send();
     xhttp.responseType = "json";
 
+    handleCompletedRequest(xhttp, recipeIdsFromCache[i], recipeContainer);
+  }
+}
+
+/**
+ * processes the completed API request and assigns an ID to the recipe
+ * @param xhttp - xmlhttprequest which handles the connection to the API
+ * @param recipeId - the id of the recipe
+ * @param recipeContainer - html container for the recipe cards.
+ */
+function handleCompletedRequest(xhttp, recipeId, recipeContainer) {
+  xhttp.onload = () => {
     // onload processes the request, then when the request is processed we evaluate
     // the response by checking if the ready state is ready and completed (4)
-    // and that the status is "Ok" (200)
-    xhttp.onload = () => {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        let recipe = xhttp.response.recipe;
-        recipe.Id = recipeIdsFromCache[i];
-        let recipeCardDocument = buildHtmlForRecipeCard(recipe);
-        // takes recipe card div from the created document
-        let recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
-        // takes returned recipe container and appends the recipe card to html
-        recipeContainer.appendChild(recipeCardHtml);
-        addFunctionalityToCardButton(recipe.Id);
-      }
-    };
-  }
+    // and that the status is "Ok" (200) 
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      let recipe = xhttp.response.recipe;
+      recipe.Id = recipeId;
+      renderRecipesFromCache(recipe, recipeContainer);
+    }
+  };
+}
+
+/**
+ * takes a single recipe item from the API, builds a card with the recipe data 
+ * and loads the recipe into the recipe container.
+ * @param recipe - single recipe from the API.
+ * @param recipeContainer - html container for the recipe cards.
+ */
+function renderRecipesFromCache(recipe, recipeContainer) {
+  let recipeCardDocument = buildHtmlForRecipeCard(recipe);
+  // takes recipe card div from the created document
+  let recipeCardHtml = recipeCardDocument.body.getElementsByTagName('div')[0];
+  // takes returned recipe container and appends the recipe card to html
+  recipeContainer.appendChild(recipeCardHtml);
+  addFunctionalityToCardButton(recipe.Id);
 }
 
 /**
