@@ -57,3 +57,57 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
 | Home | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/lighthouse/mobile-lighthouse.png) | ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/lighthouse/desktop-lighthouse.png) | Some minor warnings |
+
+## Bugs
+
+- Duplicate recipe from API with different IDs
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/api-duplicate.png)
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/duplicate-from-api-1.png)
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/duplicate-from-api-2.png)
+
+    - To fix this, I identified the IDs of the duplicate recipes, and removed a duplicate item from the array.
+
+- Recipe card title
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/recipe-title-bug.png)
+
+    - To fix this, I added the css property ```overflow: hidden;``` and ```height: 80px;``` to the recipe title, which caused the title to no longer appear out of its container.
+
+- Faulty recipes
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/api-small-image-bug.png)
+
+    - To fix this, I found the ID of the "Spanish Garlic Prawns" recipe and removed it from the array.
+    
+- Hero image not loading on iPhone devices
+    
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/iphone11-hero-img-bug.png)
+    
+    - To fix this, I removed the ```background-attachment: fixed;``` property from the background due to the fact that iPhones do not understand this CSS property.
+
+- Error 403 Forbidden
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/403-forbidden.png)
+
+    - To fix this, I changed the caching implementation to store the unique IDs of the recipes and call the API to get the recipe by their ID rather than the entire objects. The reason why this bug was happening was because the recipe objects from the API came with attached links that came with a expiration token which overtime would cause a 403 forbidden due to the fact that the token had expired.
+    
+- Chrome auto fill adding white background to search input
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/chrome-auto-comp-bg-bug.png)
+    
+    - To fix this, I applied the following styling to the search input:
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/chrome-auto-comp-bg-bug-fix.png)
+    
+## Unfixed Bugs
+
+- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
+
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/dynamically-loaded-h2.png)
+
+    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
+    
+- Possible bugs
+    
+    - Possible bugs may still be present in the cards due to the fact that the API may return faulty data that I haven't been able to catch during the testing of the API.
