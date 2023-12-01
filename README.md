@@ -102,17 +102,22 @@ There are several features on the page which are easy to follow and navigate, cr
 
     - In addition to the regex validation of the input, there is also a hint message added to the page to show the user when they have entered an invalid search term.
 
-![Example #1](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler.png)
-
-![Example #2](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler2.png)
-
-![Example #3](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler3.png)
-
-![Example #4](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler4.png)
-
     - Whenever the user inputs a search term that returns no results from the API, the hint message will state there have been no results found.
 
+![Example #1](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler.png)
+> Example 1
+
+![Example #2](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler2.png)
+>Example 2
+
+![Example #3](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler3.png)
+>Example 3
+
+![Example #4](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler4.png)
+>Example 4
+
 ![No results found](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/error-handler-feat.png)
+>No results found
 
 - **Dynamically Loaded Recipe Cards**
 
