@@ -119,6 +119,12 @@ There are several features on the page which are easy to follow and navigate, cr
 ![No results found](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/error-handler-feat.png)
 >No results found
 
+- **Clear button**
+
+    - The clear button allows the user to clear and previously written input or generated recipe content. It also allows them to clear the previously preserved interactions they have had.
+
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/clear-btn-result.png)
+
 - **Dynamically Loaded Recipe Cards**
 
     - The dynamically loaded recipe cards are generated through an API when the user clicks the search button or the random button.
