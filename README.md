@@ -75,14 +75,14 @@ There are several features on the page which are easy to follow and navigate, cr
 
     - The landing page image is the set in stone for the website. Upon entering the website the user can immediately get a feel for what the page is about without having to read anything.
 
-![Landing Page](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/landing-image.png)
+![Landing Page](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/landing-image.png)
 
 - **Search Box**
 
     - The search box contains clear instructions for the user to follow when adding ingredients. It also contains an input for the user to add their ingredients along with a search button which will return recipes specific to the user input and a random button which will return completely random recipes.
     - The search box is fully responsive and takes the input of ingredient which the user adds.
 
-![Search Box](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/search-box.png)
+![Search Box](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/search-box.png)
 
 - **Search Box Validation**
 
@@ -130,31 +130,31 @@ There are several features on the page which are easy to follow and navigate, cr
     - The dynamically loaded recipe cards are generated through an API when the user clicks the search button or the random button.
     - The recipe cards contain;
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/recipe-card-img.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/recipe-card-img.png)
 > An image related to the recipe
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/recipe-card-title.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/recipe-card-title.png)
 > The name of the recipe
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/how-many-ppl.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/how-many-ppl.png)
 > How many people the recipe can feed
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/time-to-make.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/time-to-make.png)
 > How long the recipe will take to make
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/calories.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/calories.png)
 > The calories within the recipe
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/cuisine-type.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/cuisine-type.png)
 > The cuisine type
 
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/cards-feat.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/cards-feat.png)
   
 - **Recipe Card - Expanded Content**
 
     - Also featured on the card is a "**Expand Button.**" When the user clicks on the expand button, the recipe ingredients drop down, allowing the user to easily see the required ingredients in order to make the specific recipe.
     - Also contained within the **Expand** dropdown is a **View Recipe** button. This gives the user easy access to the related recipe website in order to see the method on how to make the recipe.
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/expand-content.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/expand-content.png)
 
 ### Future Features
 
