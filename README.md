@@ -84,6 +84,36 @@ There are several features on the page which are easy to follow and navigate, cr
 
 ![Search Box](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/search-box.png)
 
+- **Search Box Validation**
+
+    - The search box mentioned above also includes input validation which is done by using a regex expression. A regex expression is a pattern that describes the allowed set of strings that can be used.
+
+    - The regex expression in the screenshot goes as follows:
+        - ```^```: asserts the start of the string.
+        - `[a-zA-Z]+`: allows one or more alphabetical characters that can be either uppercase or lowercase.
+        - `(?:\s[a-zA-Z]+)*`: `(?: ...)` helps group the patterns together to ensure that the rule of having a space before another alphabetical string is entered. The `\s` in the pattern matches any whitespace character.`[a-zA-Z]+` again ensures there are one or more alphabetical characters that can be either uppercase or lowercase. The `*` outside of the grouping means that this particular group can occur 0 or more times which means the regex expression can also accept one ingredient as a value.
+        - In addition to that in order to use the pattern the in-built javascript regex function `test()` is used against the entered value to ensure it matches the pattern. 
+
+![Regex Expression](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/regex-feat.png)
+
+![Test Regex Expression](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/regex-test-feat.png)
+
+- **Hint message**
+
+    - In addition to the regex validation of the input, there is also a hint message added to the page to show the user when they have entered an invalid search term.
+
+![Example #1](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler.png)
+
+![Example #2](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler2.png)
+
+![Example #3](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler3.png)
+
+![Example #4](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/validation-error-handler4.png)
+
+    - Whenever the user inputs a search term that returns no results from the API, the hint message will state there have been no results found.
+
+![No results found](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/error-handler-feat.png)
+
 - **Dynamically Loaded Recipe Cards**
 
     - The dynamically loaded recipe cards are generated through an API when the user clicks the search button or the random button.
