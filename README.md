@@ -263,7 +263,7 @@ function exportApiKey() {
 | [O'Reilly](https://www.oreilly.com/videos/50-projects-in/9781801079976/) | entire site | how to work with apis (netflix project) |
 | [freeCodeCamp](https://www.freecodecamp.org/news/javascript-get-request-tutorial/) | script.js | how to make a http request |
 | [Obfuscator](https://obfuscator.io/#code) | entire site | used to hide the api key | 
-| [Stackoverflow](https://stackoverflow.com/questions/4092325/how-to-remove-part-of-a-string-before-a-in-javascript) | script.js | used to get the API ID |
+| [Stackoverflow](https://stackoverflow.com/questions/4092325/how-to-remove-part-of-a-string-before-a-in-javascript) | script.js | used to get the recipe ID from the returned URL |
 | [FreeFrontend](https://freefrontend.com/css-recipe-cards/) | entire site | used card #3 as inspiration |
 | [Grrr Tech](https://grrr.tech/posts/create-dom-node-from-html-string/) | entire site | create a DOM node from an HTML string |
 | [Stackoverflow](https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied) | search bar | used to fix a bug on chrome browser which caused <br> a white box to appear while clicked inside the search input |
