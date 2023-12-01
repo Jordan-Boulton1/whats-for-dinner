@@ -66,6 +66,9 @@ function handleCompletedRequest(xhttp, recipeId, recipeContainer) {
       let recipe = xhttp.response.recipe;
       recipe.Id = recipeId;
       renderRecipesFromCache(recipe, recipeContainer);
+    } else if (xhttp.status == 429) {
+      setTimeout(8000);
+      handleCompletedRequest(xhttp, recipeId, recipeContainer);
     }
   };
 }
@@ -84,6 +87,13 @@ function renderRecipesFromCache(recipe, recipeContainer) {
   recipeContainer.appendChild(recipeCardHtml);
   addFunctionalityToCardButton(recipe.Id);
 }
+
+document.getElementById("clear-btn").addEventListener("click", function (event) {
+  event.preventDefault();
+  document.getElementById("search-term").value = "";
+  document.getElementById("returned-recipe-container").innerHTML = "";
+  localStorage.clear();
+})
 
 /**
  * Creates an array of ingredients/food. Selects a random item from the array
@@ -137,6 +147,10 @@ function callApi(ingredientValue) {
   // and that the status is "Ok" (200)
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
+      handleApiResponse(xhttp.response);
+    }
+    else if (xhttp.status == 429) {
+      setTimeout(8000);
       handleApiResponse(xhttp.response);
     }
   };
