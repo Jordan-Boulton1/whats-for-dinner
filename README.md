@@ -169,6 +169,7 @@ There are several features on the page which are easy to follow and navigate, cr
 - [Edamam](https://developer.edamam.com/edamam-recipe-api) recipe search API used to integrate a recipe database.
 - [Obfuscator](https://obfuscator.io/) used to hide the API key and API ID.
 - [Ionos](https://www.ionos.co.uk/tools/favicon-generator#tool) used to generate the favicon files.
+- [Regex](https://regex101.com/) used to build regex expressions.
 
 ## Testing
 
@@ -268,6 +269,7 @@ function exportApiKey() {
 | [Stackoverflow](https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied) | search bar | used to fix a bug on chrome browser which caused <br> a white box to appear while clicked inside the search input |
 | [w3schools](https://www.w3schools.com/howto/howto_js_accordion.asp) | recipe card | used to help create the drop down button |
 | [Modzilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd) | entire site | how to work with ```<kbd>``` input element |
+| [Regex](https://regex101.com/) | Search input validation | how to work and build regex expressions |
 
 ### Media
 
