@@ -14,6 +14,9 @@ loadCache();
  */
 function loadCache() {
   let getRecipesFromCache = localStorage.getItem("cached-recipes");
+  let getLastEnteredValue = localStorage.getItem("lastEnteredValue");
+  let searchTerm = document.getElementById("search-term");
+  getLastEnteredValue == null ? searchTerm.value = "" : searchTerm.value = getLastEnteredValue;
   if (getRecipesFromCache == null) {
     return;
   }
@@ -24,6 +27,7 @@ function loadCache() {
 
 document.getElementById('random-btn').addEventListener("click", function (event) {
   event.preventDefault();
+  localStorage.removeItem("lastEnteredValue");
   randomButton();
 });
 
@@ -107,6 +111,7 @@ document.getElementById('search-btn').addEventListener("click", function (event)
 
   //Tests the input from the field against the allowed patterns, if its false, meaning the test failed, show the error handler
   if (regex.test(ingredientValue.value)) {
+    localStorage.setItem("lastEnteredValue", ingredientValue.value);
     callApi(ingredientValue.value);
     return;
   }
