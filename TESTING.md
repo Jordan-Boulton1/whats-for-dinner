@@ -88,13 +88,17 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 - Error 403 Forbidden
 
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/403-forbidden.png)
+
+    - To fix this, I changed the caching implementation to store the unique IDs of the recipes and call the API to get the recipe by their ID rather than the entire objects. The reason why this bug was happening was because the recipe objects from the API came with attached links that came with a expiration token which overtime would cause a 403 forbidden due to the fact that the token had expired.
+
+- Error 429 Too many Requests
+
     ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/429-error-code.PNG)
 
     - To fix this, I added an additional check for the response from the API for status 429 and forced the code to wait 8 seconds before calling the API again to successfully retrieve the recipes.
 
-- Error 429 Too many Requests
-
-    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/403-forbidden.png)
+    ![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/testing/bugs/429-error-code-fix.PNG)
 
 - Chrome auto fill adding white background to search input
 
