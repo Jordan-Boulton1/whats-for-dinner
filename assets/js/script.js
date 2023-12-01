@@ -98,7 +98,7 @@ document.getElementById('search-btn').addEventListener("click", function (event)
   let ingredientValue = document.getElementById("search-term");
   let errorHandler = document.getElementById('error-handler');
 
-  // Define a regular expression for the pattern of text separated by commas
+  // Define a regular expression for the pattern of text separated by space
   const regex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
   if (ingredientValue.value === "") {
     errorHandler.innerHTML = "Please provide a valid search term";
