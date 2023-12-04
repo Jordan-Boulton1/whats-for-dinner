@@ -154,7 +154,7 @@ There are several features on the page which are easy to follow and navigate, cr
 
     - Also featured on the card is a "**Show Button.**" When the user clicks on the show button, the recipe card is extended with additional content that contains the required ingredients to make the recipe. In addition to that, when the content is expanded the text of the button changes to "**Hide**" and when hidden, to "**Show**".
     - Also contained within the expanded content containing the ingredients is a **View Recipe** button. This gives the user easy access to the related recipe website in order to see the method on how to make the recipe.
-![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/expand-content.png)
+![screenshot](https://github.com/Jordan-Boulton1/whats-for-dinner/blob/main/documentation/features/card-show-hide.png)
 
 ### Future Features
 
