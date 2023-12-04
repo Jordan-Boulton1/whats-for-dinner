@@ -281,7 +281,7 @@ function exportApiKey() {
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Unsplash](https://unsplash.com/photos/avocado-tomatoes-eggs-mushrooms-spring-onions-and-leaves-uQs1802D0CQ) | home page | image | hero image background |
+| [Unsplash](https://unsplash.com/photos/dumplings-platter-SiwrpBnxDww) | home page | image | hero image background |
 
 ### Acknowledgements
 
